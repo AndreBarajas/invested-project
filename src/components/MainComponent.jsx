@@ -11,30 +11,23 @@ const Prueba = () => {
     }
 
     return (
-        <div className=' bg-indigo-200 flex-row items-center h-screen '>
-            <div className='text-5xl p-10 pl-80'>
+        // flex-row items-center
+        <div className=' bg-violet-200 h-screen font-display '>
+            <div className='text-5xl font-semibold p-10 pl-80 '>
                 <h1>Bienvenido a Credify</h1>
             </div>
-            <div className='flex items-center pl-72'> 
-               
-                <div className='p-8'>
-                    <h1>Clientes</h1>
-                </div>
-                <div className='bg-yellow-200 w-50 h-50'>
-                    <button onClick={() => handleClickNew(true)} >Agregar nuevo cliente</button>
-                </div>
+            <div className='flex items-center pl-72'>       
+                    <h1 className=' text-3xl font-normal p-8' >Clientes</h1>      
+                    <button onClick={() => handleClickNew(true)} className='bg-yellow-200 w-50 h-50'
+                    >Agregar nuevo cliente</button>
             </div>
 
-            <div className='pl-96'>
+            <div className='pl-96 w-screen'>
                 <NewClient stateModal={stateModal} handleClickNew={handleClickNew } />
                 <Clients stateModal={stateModal} />
-
                 {/* {<NewClient stateModal={stateModal} handleClickNew={handleClickNew} /> ? <NewClient stateModal={stateModal} handleClickNew={handleClickNew} /> : <Clients stateModal={stateModal} />} */}
-
             </div>
-           
         </div>
-
     )
     
 }

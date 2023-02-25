@@ -17,7 +17,7 @@ const Clients = ({ stateModal }) => {
 
     if (!stateModal)
         return (
-        <div className='container mx-auto text-center'>
+            <div className='container mx-auto text-center font-display '>
             {/* {stateModal !& */}
                 <table className='bg-white w-2/3 rounded-lg'>
                     <thead className='grid grid-cols-5'>
