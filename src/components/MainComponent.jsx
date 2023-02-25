@@ -11,21 +11,21 @@ const Prueba = () => {
     }
 
     return (
-        <div className=' bg-indigo-200 flex-row h-screen pl-64'>
-            <div className='text-4xl p-8'>
+        <div className=' bg-indigo-200 flex-row items-center h-screen '>
+            <div className='text-5xl p-10 pl-80'>
                 <h1>Bienvenido a Credify</h1>
             </div>
-            <div className='flex space-x-96 '> 
+            <div className='flex items-center pl-72'> 
                
                 <div className='p-8'>
                     <h1>Clientes</h1>
                 </div>
-                <div>
-                    <button onClick={() => handleClickNew(true)}>Agregar nuevo cliente</button>
+                <div className='bg-yellow-200 w-50 h-50'>
+                    <button onClick={() => handleClickNew(true)} >Agregar nuevo cliente</button>
                 </div>
             </div>
 
-            <div>
+            <div className='pl-96'>
                 <NewClient stateModal={stateModal} handleClickNew={handleClickNew } />
                 <Clients stateModal={stateModal} />
 

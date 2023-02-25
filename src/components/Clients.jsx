@@ -17,10 +17,10 @@ const Clients = ({ stateModal }) => {
 
     if (!stateModal)
         return (
-        <div className='container '>
+        <div className='container mx-auto text-center'>
             {/* {stateModal !& */}
-                <table className='bg-white w-2/3'>
-                    <thead className='grid grid-cols-5 text-center'>
+                <table className='bg-white w-2/3 rounded-lg'>
+                    <thead className='grid grid-cols-5'>
 
                         <th className='border border-grey-400 px-4 py-2'>Foto</th>
                         <th className='border border-grey-400'>Nombre(s)</th>
@@ -31,7 +31,7 @@ const Clients = ({ stateModal }) => {
                     </thead>
 
                     {data.map((user) => (
-                        <tbody className='grid grid-cols-5 gap-3 m-4 text-center'>
+                        <tbody className='grid grid-cols-5 gap-3 m-4'>
                             <img src={user.photo} alt='avatar-icon'></img>
                             <p>{user.name}</p>
                             <p>{user.lastName}</p>
