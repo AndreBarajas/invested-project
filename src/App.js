@@ -5,7 +5,7 @@ import MainComponent from './components/MainComponent';
 
 function App() {
   return (
-    <div classname='flex flex-row'>
+    <div className='flex flex-row'>
          
       <div>
         <SideBanner />
