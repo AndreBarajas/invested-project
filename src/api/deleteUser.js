@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const deleteUser = async (userId) => {
-    console.log("id", userId) 
+   
     const apiUsers = `https://63f81d1e5b0e4a127de05510.mockapi.io/users/${userId}`;
     
     return await axios

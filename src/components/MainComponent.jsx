@@ -18,7 +18,9 @@ const Prueba = () => {
             </div>
             <div className='flex items-center pl-72'>       
                     <h1 className=' text-3xl font-normal p-8' >Clientes</h1>      
-                    <button onClick={() => handleClickNew(true)} className='bg-yellow-200 w-50 h-50'
+                <button
+                    onClick={() => handleClickNew(true)}
+                    className='bg-yellow-200 hover:bg-yellow-300 px-3 py-3 rounded '
                     >Agregar nuevo cliente</button>
             </div>
 

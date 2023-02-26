@@ -17,7 +17,7 @@ const NewClient = ({ stateModal, handleClickNew }) => {
     return (
         <>
             {stateModal && 
-                <form className='bg-white font-display w-2/3 rounded-lg '>
+                <section className='bg-white font-display w-2/3 rounded-lg '>
                     <div className='flex space-x  py-2'>
                         <div className='w-1/2 py-2 m-2'>
                             <label for='name'>Nombre</label>
@@ -55,10 +55,14 @@ const NewClient = ({ stateModal, handleClickNew }) => {
                         </div>
                     </div>
                     <div className='space-x-4 py-2 m-2'>
-                        <button onClick={() => postUsers(addUser())}>Aceptar</button>
-                        <button onClick={() => handleClickNew(false)}>Cancelar</button>  
+                        <button
+                            className='bg-green-600 hover:bg-green-700 px-3 py-3 rounded text-white'
+                            onClick={() => postUsers(addUser())}>Aceptar</button>
+                        <button
+                            className=' bg-red-600 hover:bg-red-700 px-3 py-3 rounded text-white'
+                            onClick={() => handleClickNew(false)}>Cancelar</button>  
                     </div>                    
-            </form>
+            </section>
             }
         </>
     )
