@@ -1,6 +1,6 @@
 import NewClient from './NewClient';
 import Clients from './Clients';
-import { useState, useEffect } from 'react'
+import { useState} from 'react'
 
 const Prueba = () => { 
    
@@ -11,7 +11,7 @@ const Prueba = () => {
     }
 
     return (
-        // flex-row items-center
+       
         <div className=' bg-violet-200 h-screen font-display '>
             <div className='text-5xl font-semibold p-10 pl-80 '>
                 <h1>Bienvenido a Credify</h1>
@@ -27,7 +27,6 @@ const Prueba = () => {
             <div className='pl-96 w-screen'>
                 <NewClient stateModal={stateModal} handleClickNew={handleClickNew } />
                 <Clients stateModal={stateModal} />
-                {/* {<NewClient stateModal={stateModal} handleClickNew={handleClickNew} /> ? <NewClient stateModal={stateModal} handleClickNew={handleClickNew} /> : <Clients stateModal={stateModal} />} */}
             </div>
         </div>
     )
