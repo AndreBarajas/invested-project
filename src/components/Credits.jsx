@@ -1,4 +1,5 @@
 import React from "react";
+import Navbar from "./Navbar";
 import getUserToEdit from "../api/getUserToEdit";
 
 const Credits = () => {
@@ -7,7 +8,8 @@ const Credits = () => {
     
     return (
         <div>
-
+            <Navbar/>
+            
         </div>
 
     )

@@ -1,9 +1,17 @@
 import React from "react";
 import updateUser from "../api/updateUser";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import getUserToEdit from "../api/getUserToEdit";
 
 
-const ModalEdit = ({ handleOpenModal, openModal, editUser }) => {
+const ModalEdit = ({editUser}) => {
+
+    // const [editUser, setEditUser] = useState([])
+    
+    // useEffect = () => {
+    //     getUserToEdit().then(setEditUser)   
+    // }
 
       const [updatedInfo, setUpdatedInfo] = useState({
         name: editUser.name,
@@ -19,15 +27,15 @@ const ModalEdit = ({ handleOpenModal, openModal, editUser }) => {
     }
 
     const handleInput = (event) => {
-        setUpdatedInfo({...updatedInfo, [event.target.name]: event.target.value})
-       
+            setUpdatedInfo({...updatedInfo, [event.target.name]: event.target.value})
+
     }
 
     console.log('updatedInfo', updatedInfo, editUser.id)
 
     return (
         <div >
-            {openModal && 
+          
                 <div className='h-screen w-full fixed left-0 top-0 flex justify-center bg-black  bg-opacity-70'>
                     <form
                         onSubmit={(e) => handleUpdate(e, editUser.id, updatedInfo)}
@@ -73,15 +81,15 @@ const ModalEdit = ({ handleOpenModal, openModal, editUser }) => {
                                     className='bg-green-600 hover:bg-green-700 px-3 py-3 rounded text-white'
                                 // onSubmit={() => handleInput(editUser.id, updatedInfo)}
                             >Aceptar</button>
-                            <button
+                            <Link
+                                    to={'/'}
                                     type="button"
                                     className='bg-red-600 hover:bg-red-700 px-3.5 py-3.5 rounded text-white'
-                                    onClick={() => handleOpenModal(false)}>Cancelar</button>
+                                    >Cancelar</Link>
                             </div>
                         </form>
                         ))          
                 </div>
-           }
         </div >
     )
 }

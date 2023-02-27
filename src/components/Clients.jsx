@@ -6,12 +6,12 @@ import ModalEdit from './ModalEdit';
 import getUserToEdit from '../api/getUserToEdit'
 import { useNavigate, Link } from "react-router-dom";
 
-const Clients = ({ stateModal, handleClickNew }) => { 
+const Clients = () => { 
 
     const navigate = useNavigate();
 
     const [data, setData] = useState([])
-    const [openModal, setOpenModal] = useState(false)
+    // const [openModal, setOpenModal] = useState(false)
     const [editUser, setEditUser] = useState([])
 
 
@@ -24,24 +24,26 @@ const Clients = ({ stateModal, handleClickNew }) => {
     };
 
     const handleOpenModal = (stateEdit, userId) => { 
-        setOpenModal(stateEdit)
+        // setOpenModal(stateEdit)
         getUserToEdit(userId).then(setEditUser)
+        navigate('/edit');
+        < ModalEdit editUser={editUser} /> 
     }
 
-    const handleViewCredit = (userId) => {
-        getUserToEdit(userId).then(setEditUser)
-    }
+    // const handleViewCredit = (userId) => {
+    //     getUserToEdit(userId).then(setEditUser)
+    //     navigate('/credits')
+    // }
    
-    if (!stateModal)
-        return (
+         return (
             <div className='container mx-auto font-display '>
 
                 <div className='flex items-center pl-1 '>
                     <h1 className=' text-3xl font-normal p-8'>Clientes</h1>
-                    <button
-                        onClick={() => handleClickNew(true)}
+                    <Link
+                        to={'/add-client'}
                         className='bg-yellow-200 hover:bg-yellow-300 px-3 py-3 rounded '
-                    >Nuevo cliente</button>
+                    >Nuevo cliente</Link>
                 </div>
                 
                 <section className='bg-slate-50 w-2/3 rounded-lg  text-center'>
@@ -61,7 +63,7 @@ const Clients = ({ stateModal, handleClickNew }) => {
                                      <p >{user.lastName}</p>
                                     <div>
                                     <Link
-                                        onClick={()=>handleViewCredit(user.id)}
+                                        to={'/credits'}
                                         type='button'
                                         className='bg-yellow-200 hover:bg-yellow-300 rounded px-3 py-3 '>{'Ver créditos'}</Link>
                                      </div>
@@ -79,7 +81,7 @@ const Clients = ({ stateModal, handleClickNew }) => {
                             </div>
                         ))}
                     </section>
-                <ModalEdit handleOpenModal={handleOpenModal} openModal={openModal} editUser={editUser} />
+                {/* <ModalEdit editUser={editUser} /> */}
         </div>
        
     );
