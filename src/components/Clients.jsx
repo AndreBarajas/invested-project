@@ -4,8 +4,11 @@ import getInfo from '../api/getInfo';
 import deleteUser from '../api/deleteUser';
 import ModalEdit from './ModalEdit';
 import getUserToEdit from '../api/getUserToEdit'
+import { useNavigate, Link } from "react-router-dom";
 
-const Clients = ({ stateModal }) => { 
+const Clients = ({ stateModal, handleClickNew }) => { 
+
+    const navigate = useNavigate();
 
     const [data, setData] = useState([])
     const [openModal, setOpenModal] = useState(false)
@@ -25,16 +28,28 @@ const Clients = ({ stateModal }) => {
         getUserToEdit(userId).then(setEditUser)
     }
 
+    const handleViewCredit = (userId) => {
+        getUserToEdit(userId).then(setEditUser)
+    }
    
     if (!stateModal)
         return (
-            <div className='container mx-auto text-center font-display '>
-                    <section className='bg-white w-2/3 rounded-lg '>
+            <div className='container mx-auto font-display '>
+
+                <div className='flex items-center pl-1 '>
+                    <h1 className=' text-3xl font-normal p-8'>Clientes</h1>
+                    <button
+                        onClick={() => handleClickNew(true)}
+                        className='bg-yellow-200 hover:bg-yellow-300 px-3 py-3 rounded '
+                    >Nuevo cliente</button>
+                </div>
+                
+                <section className='bg-slate-50 w-2/3 rounded-lg  text-center'>
                         <div className='grid grid-cols-5'>
                             <div className='border border-grey-400 px-4 py-2'>Foto</div>
                             <div className='border border-grey-400'>Nombre(s)</div>
                             <div className='border border-grey-400'>Apellidos</div>
-                            <div className='border border-grey-400'>Email</div>
+                            <div className='border border-grey-400'>Detalles</div>
                             <div className='border border-grey-400'>Acciones</div>
                         </div>
 
@@ -43,8 +58,13 @@ const Clients = ({ stateModal }) => {
                                 
                                     <img src={user.photo} alt='avatar-icon'></img>
                                     <p>{user.name}</p>
-                                    <p>{user.lastName}</p>
-                                    <p>{user.email}</p>
+                                     <p >{user.lastName}</p>
+                                    <div>
+                                    <Link
+                                        onClick={()=>handleViewCredit(user.id)}
+                                        type='button'
+                                        className='bg-yellow-200 hover:bg-yellow-300 rounded px-3 py-3 '>{'Ver créditos'}</Link>
+                                     </div>
                                     <div className='grid grid-cols-3 gap-0 ' >
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6" onClick={() => handleOpenModal(true, user.id)}>
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
