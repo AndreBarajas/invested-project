@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NewClient from './components/NewClient';
 import ModalEdit from './components/ModalEdit';
 import Credits from './components/Credits';
+import CreditUser from './components/CreditUser'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/add-client" element={<NewClient />} />
         <Route exact path="/edit" element={<ModalEdit />} />
         <Route exact path="/credits" element={<Credits />} />
+        <Route exact path="/credit-user" element={<CreditUser />} />
       </Routes>
 
 

@@ -28,7 +28,8 @@ const NewClient = () => {
                 <div className='border border:gray-600 bg-slate-50  w-2/3 rounded-lg font-display '>
                     <div className='flex space-x  py-2'>
                         <div className='w-1/2 py-2 m-2'>
-                            <label for='name'>Nombre</label>
+                            <label htmlFor='name'>Nombre</label>
+                            
                             <input
                                 type="text"
                                 className=' border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none  focus:border-violet-500'
@@ -36,7 +37,7 @@ const NewClient = () => {
                         </div>
 
                         <div className='w-1/2 py-2 m-2'>
-                            <label for='surnames'>Apellidos</label>
+                            <label htmlFor='surnames'>Apellidos</label>
                             <input
                                 type="text"
                                 className=' border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-violet-500 '
@@ -44,14 +45,14 @@ const NewClient = () => {
                         </div>
                     </div>
                     <div className='py-2 m-2'>
-                        <label for='email'>Email</label>
+                        <label htmlFor='email'>Email</label>
                         <input
                             type="text"
                             className='border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-violet-500'
                             onChange={(e) => setEmail(e.target.value)} />
                     </div>
                     <div className='w-1/2 py-2 m-2'>
-                        <label for='credit'>Monto crédito</label>
+                        <label htmlFor='credit'>Monto crédito</label>
                         <div className='flex'>
                             <div className=' flex items-center py-2 px-2 bg-gray-400  text-white rounded'>MXN</div>
                             <input
