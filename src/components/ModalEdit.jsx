@@ -1,9 +1,12 @@
 import React from "react";
 import updateUser from "../api/updateUser";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 const ModalEdit = ({ handleOpenModal, openModal, editUser }) => {
+
+    const navigate = useNavigate();
 
       const [updatedInfo, setUpdatedInfo] = useState({
         name: editUser.name,
@@ -14,13 +17,14 @@ const ModalEdit = ({ handleOpenModal, openModal, editUser }) => {
 
     const handleUpdate = (event, userId, updatedInfo) => {
         event.preventDefault();
-        // handleOpenModal(false)
+        handleOpenModal(false)
+        // navigate('/')
         updateUser(userId, updatedInfo)
+
     }
 
     const handleInput = (event) => {
         setUpdatedInfo({...updatedInfo, [event.target.name]: event.target.value})
-       
     }
 
     console.log('updatedInfo', updatedInfo, editUser.id)
@@ -71,7 +75,6 @@ const ModalEdit = ({ handleOpenModal, openModal, editUser }) => {
                             <button
                                     type="submit"
                                     className='bg-green-600 hover:bg-green-700 px-3 py-3 rounded text-white'
-                                // onSubmit={() => handleInput(editUser.id, updatedInfo)}
                             >Aceptar</button>
                             <button
                                     type="button"
