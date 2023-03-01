@@ -58,6 +58,8 @@ Esta seccción está pensada para considerar los puntos a implementar en la apli
 
 3. Diseño: navegar un poco más en las funcionalidades de Tailwind para mejorar la vista de las tablas y de la aplicación en general. 
 
+4. Refactorización: modularización del código ya que tarda en renderizarse la aplicación. 
+
 
 ## 5. Tecnologías utilizadas
 
