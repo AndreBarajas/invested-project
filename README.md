@@ -59,6 +59,6 @@ Día  | Actividades
 1. Prototipo en Figma: <https://www.figma.com/file/CBRKwIHc6Ec1LfWtPF3mK0/Invested?node-id=1%3A9&t=IJe7V1tbD0Q809gL-1>
 2. Planeación en Trello: <https://trello.com/b/ipbSklVf/prueba-t%C3%A9cnica-invested>
 2. Mock server utilizado: <https://mockapi.io/projects/63f81d1e5b0e4a127de05511>
-3. Proyecto desplegado: 
+3. Proyecto desplegado: pruebagit
 
 
