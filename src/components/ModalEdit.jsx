@@ -1,12 +1,9 @@
 import React from "react";
 import updateUser from "../api/updateUser";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 
 const ModalEdit = ({ handleOpenModal, openModal, editUser }) => {
-
-    const navigate = useNavigate();
 
       const [updatedInfo, setUpdatedInfo] = useState({
         name: editUser.name,
@@ -18,7 +15,6 @@ const ModalEdit = ({ handleOpenModal, openModal, editUser }) => {
     const handleUpdate = (event, userId, updatedInfo) => {
         event.preventDefault();
         handleOpenModal(false)
-        // navigate('/')
         updateUser(userId, updatedInfo)
 
     }
@@ -26,8 +22,6 @@ const ModalEdit = ({ handleOpenModal, openModal, editUser }) => {
     const handleInput = (event) => {
         setUpdatedInfo({...updatedInfo, [event.target.name]: event.target.value})
     }
-
-    console.log('updatedInfo', updatedInfo, editUser.id)
 
     return (
         <div >
@@ -39,7 +33,7 @@ const ModalEdit = ({ handleOpenModal, openModal, editUser }) => {
                             <h4 className='text-left p-8 text-2xl font-semibold'>Editar usuario</h4>
                             <div className='flex space-x  py-2'>
                                 <div className='w-1/2 py-2 m-2'>
-                                    <label for='name'>Nombre</label>
+                                    <label htmlFor='name'>Nombre</label>
                                 <input
                                     defaultValue={editUser.name || ''}
                                     type="text"
@@ -50,7 +44,7 @@ const ModalEdit = ({ handleOpenModal, openModal, editUser }) => {
                                 </div>
 
                                 <div className='w-1/2 py-2 m-2'>
-                                    <label for='surnames'>Apellidos</label>
+                                    <label htmlFor='surnames'>Apellidos</label>
                                 <input
                                      defaultValue={editUser.lastName || ''}
                                      type="text"
@@ -61,7 +55,7 @@ const ModalEdit = ({ handleOpenModal, openModal, editUser }) => {
                                 </div>
                             </div>
                             <div className='py-2 m-2'>
-                                <label for='email'>Email</label>
+                                <label htmlFor='email'>Email</label>
                             <input
                                 defaultValue={editUser.email || ''}
                                 type="text"
@@ -71,7 +65,7 @@ const ModalEdit = ({ handleOpenModal, openModal, editUser }) => {
                             />
                             </div>
 
-                            <div className='space-x-4 py-2 m-2'>
+                            <div className='flex justify-end space-x-4 py-2 m-2'>
                             <button
                                     type="submit"
                                     className='bg-green-600 hover:bg-green-700 px-3 py-3 rounded text-white'
