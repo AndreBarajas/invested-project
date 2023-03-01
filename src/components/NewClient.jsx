@@ -12,7 +12,7 @@ const NewClient = () => {
     const [credit, setCredit] = useState('')
 
     const addUser = () => {
-        const newUsers = { name: name, lastName: lastName, email: email, amount: credit, payment: '0.00' }
+        const newUsers = { name: name, lastName: lastName, email: email, client: { amount: credit, payment: '0.00' } }
         navigate('/')
         return newUsers;
     }

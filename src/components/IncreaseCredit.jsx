@@ -5,26 +5,24 @@ import { useState } from 'react'
 
 const CreditUser = ({ handleIncreaseCredit, openIncrease, creditUser }) => {
 
-    const [dato, setDato] = useState([])
+    const [dato, setDato] = useState([creditUser.credit])
+    console.log("datos solo de credit", dato)
     
-
-    const [increaseCredit, stateIncreaseCredit] = useState([{
+    //Data to update at API
+    const [increaseCredit, setIncreaseCredit] = useState([{
         credit: {
             amount: dato.amount
         }
-    }
-    ])
+    }])
 
-    console.log("increaseCredit", increaseCredit)
  
     const handleChangeCredit = (e) => {
-        stateIncreaseCredit({ ...increaseCredit, [e.target.name]: e.target.value })
-        setDato(creditUser.credit)
+        setIncreaseCredit({ ...increaseCredit, [e.target.name]: e.target.value })
     }
 
-    const handleUpdateCredit = (userId, increaseCredit) => {
-        stateIncreaseCredit()
-        updateUser(userId, increaseCredit )
+    const handleUpdateCredit = (userId, dataToUpdate ) => {
+        updateUser(userId, dataToUpdate) 
+        handleIncreaseCredit(false)
     }
 
 
@@ -33,6 +31,7 @@ const CreditUser = ({ handleIncreaseCredit, openIncrease, creditUser }) => {
             {openIncrease &&
                 <div className='h-screen w-full fixed left-0 top-0 flex justify-center bg-black  bg-opacity-70'>
                     <form
+                        onSubmit={() => handleUpdateCredit(creditUser.id, increaseCredit)}
                         className="bg-white font-display w-1/3 h-96 rounded-lg mt-40">
                     
                         <div className='w-2/3 ml-20 mt-10'>
@@ -56,8 +55,6 @@ const CreditUser = ({ handleIncreaseCredit, openIncrease, creditUser }) => {
                                 <button
                                     type="submit"
                                     className='bg-green-600 hover:bg-green-700 px-3 py-3 rounded text-white'
-                                    
-                                    onClick={() => handleUpdateCredit(creditUser.id)}
                                     >Agregar crédito</button>
                                 <button
                                     type="button"
@@ -70,9 +67,7 @@ const CreditUser = ({ handleIncreaseCredit, openIncrease, creditUser }) => {
                 </div>
             }
         </div >
-
     )
-
 }
 
 export default CreditUser;

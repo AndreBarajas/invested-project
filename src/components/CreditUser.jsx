@@ -9,11 +9,11 @@ const CreditUser = ({ handleViewCredit, openModal, creditUser }) => {
   
     const [updatedPay, setUpdatedPay] = useState({
         credit: {
-            amount: amountCredit.amount,
+            // amount: amountCredit.amount,
             // payment: creditUser.credit[0].payment,
         }
     })
-    // console.log("datos de un usario", updatedPay)
+    
 
     const handleInput = (event) => {
         setUpdatedPay({ ...updatedPay, [event.target.name]: event.target.value })
@@ -51,7 +51,7 @@ const CreditUser = ({ handleViewCredit, openModal, creditUser }) => {
                              
                                     <div className="text-right">
                                         <span className="text-m font-semibold inline-block text-violet-600">
-                                           ${creditUser.amount}
+                                           {/* ${creditUser.amount} */}
                                         </span>
                                     </div>
                              

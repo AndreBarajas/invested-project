@@ -25,7 +25,10 @@ const Clients = () => {
     }
 
     const handleIncreaseCredit = (stateIncreaseCredit, userId) => {
-            setOpenIncrease(stateIncreaseCredit, userId)
+        if (userId) {
+            getUserToEdit(userId).then(setCreditUser)
+        }
+        setOpenIncrease(stateIncreaseCredit)
     }
 
     console.log("creditUser", creditUser )

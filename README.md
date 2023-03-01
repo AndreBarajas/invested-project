@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# Reto técnico de Invested
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Objetivo
 
-In the project directory, you can run:
+El objetivo de este proyecto es la creación de una aplicación de un sistema crediticio que utilice las operaciones de CRUD con las siguientes características: 
 
-### `npm start`
+* Creación de nuevos clientes con un monto solicitado.
+* Lectura de todos los clientes registrados.
+* Actualización de los datos de los clientes.
+* Borrar a clientes del registro. 
+* Mostrar información de cada uno de los créditos que tiene el cliente. (algunos clientes tiene mas de 1 crédito).
+* Cada crédito se paga en 4 parcialidades. 
+* Mostrar indicador para visualizar status de los pagos. (cuenta liquidada, pagos parciales o ningún pago)  
+* Registar un nuevo pago.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Historias de usuario
 
-### `npm test`
+**Historia de usuario 1**
+Yo como administrador quiero dar de alta nuevos clientes y visualizar los clientes que ya estén registrados. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Historia de usuario 2** 
+Yo como administrador quiero actualizar los datos de un cliente. 
 
-### `npm run build`
+**Historia de usuario 3** 
+Yo como administrador quiero borrar a un cliente del registro.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Historia de usuario 4**
+Yo como administrador quiero visualizar los pagos realizados a un crédito.   
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Historia de usuario 5**
+Yo como administrador quiero registrar un nuevo pago.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### Planeación
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Día  | Actividades
+------------- | -------------
+1  | Análisis del flujo, realización de prototipo de alta fidelidad y resolución de dudas. 
+2  | Análisis del flujo, realización de prototipo de alta fidelidad y resolución de dudas. 
+3  | Historia de usuario 1  
+4  | Historia de usuario 2 y 3 
+5  | Historia de usuario 4 
+6  | Historia de usuario 5 
+7  | Despliegue en GitHub pages 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Diseño
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+*Paleta de colores: <https://colormagic.app/palette/XxKh709FPzSMkAYl2jMY>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Tecnologías utilizadas
 
-## Learn More
+[![My Skills](https://skillicons.dev/icons?i=js,html,react,tailwind)](https://skillicons.dev)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Links
 
-### Code Splitting
+1. Prototipo en Figma: <https://www.figma.com/file/CBRKwIHc6Ec1LfWtPF3mK0/Invested?node-id=1%3A9&t=IJe7V1tbD0Q809gL-1>
+2. Planeación en Trello: <https://trello.com/b/ipbSklVf/prueba-t%C3%A9cnica-invested>
+2. Mock server utilizado: <https://mockapi.io/projects/63f81d1e5b0e4a127de05511>
+3. Proyecto desplegado: 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

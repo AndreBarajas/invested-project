@@ -4,8 +4,6 @@ const updateUser = async (userId, infoToUpdate) => {
      
     const apiUsers = `https://63f81d1e5b0e4a127de05510.mockapi.io/users/${userId}`;
 
-    console.log("datos que recibe updateUser", infoToUpdate, userId, apiUsers)
-
      await axios
         .put(apiUsers, infoToUpdate)
         .then((response) => {
