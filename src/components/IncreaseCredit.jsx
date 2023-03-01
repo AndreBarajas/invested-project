@@ -1,17 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import updateUser from '../api/updateUser'
 import { useState } from 'react'
 
 
 const CreditUser = ({ handleIncreaseCredit, openIncrease, creditUser }) => {
 
-    const [dato, setDato] = useState([creditUser.credit])
-    console.log("datos solo de credit", dato)
-    
+    // const to obtain info of property credit ;(
+    const [dato, setDato] = useState([]);
+      
     //Data to update at API
     const [increaseCredit, setIncreaseCredit] = useState([{
         credit: {
-            amount: dato.amount
+            // amount: dato.amount
         }
     }])
 
